@@ -1,0 +1,38 @@
+<mat-toolbar class="position-absolute" color="primary">
+  <mat-toolbar-row class="justify-content-between">
+    <button [routerLink]="['/home']" mat-button>Cool King</button>
+    <div>
+      <button [routerLink]="['/home']" mat-button>Home</button>
+      <button [routerLink]="['/dashboard']" mat-button>Dashboard</button>
+      <button [routerLink]="['/home']" mat-button>My Booking</button>
+    </div>
+
+    <button [routerLink]="['/login']" mat-button>Logout</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="d-flex align-items-center h-100">
+  <div class="container" style="margin-bottom: 20px;">
+    <div class="box" *ngFor="let restaurant of restaurants">
+      <mat-card class="example-card">
+        <img mat-card-image src="assets/images/{{restaurant.image}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="desc">
+            <div style="text-align: center;">AC Service</div>
+            <div>Place:xxx</div>
+            <div>Timing : 0:00 to 23.59</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <!-- <div class="box">Item two</div>
+    <div class="box">Item three</div>
+    <div class="box">Item four</div>
+    <div class="box">Item five</div>
+    <div class="box">Item six</div>
+    <div class="box">Item seven</div>
+    <div class="box">Item eight</div> -->
+  </div>
+</div>
+
+
+

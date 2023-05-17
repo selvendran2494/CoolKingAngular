@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+
+  display: grid;
+
+  grid-template-columns: 1.5fr 2.5fr;
+  /* Adjust the ratio as needed */
+
+  grid-template-rows: auto 1fr auto;
+
+  height: 100vh;
+
+}
+
+
+.header {
+
+  grid-column: 1 / span 2;
+
+  background-color: lightgray;
+
+  padding: 10px;
+
+}
+
+
+.sidenav {
+
+  grid-column: 1;
+
+  grid-row: 2 / span 2;
+
+  background-color: lightblue;
+
+  padding: 10px;
+
+}
+
+
+.content {
+
+  grid-column: 2;
+
+  grid-row: 2;
+
+  background-color: lightgreen;
+
+  padding: 10px;
+
+}
+
+
+.footer {
+
+  grid-column: 1 / span 2;
+
+  background-color: lightgray;
+
+  padding: 10px;
+
+}
