@@ -1,66 +1,147 @@
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.container {
-
+.grid-container {
   display: grid;
-
-  grid-template-columns: 1.5fr 2.5fr;
-  /* Adjust the ratio as needed */
-
   grid-template-rows: auto 1fr auto;
-
-  height: 100vh;
-
+  grid-template-columns: 1.5fr 4fr;
+  grid-template-areas:
+    "header header"
+    "sidenav content"
+    "footer footer";
+  min-height: 100vh;
 }
-
 
 .header {
-
-  grid-column: 1 / span 2;
-
-  background-color: lightgray;
-
+  grid-area: header;
+  background-color: #f2f2f2;
   padding: 10px;
-
 }
-
 
 .sidenav {
-
-  grid-column: 1;
-
-  grid-row: 2 / span 2;
-
-  background-color: lightblue;
-
+  display: grid;
+  grid-template-rows: 1.5fr 3fr;
+  grid-area: sidenav;
+  background-color: #f9f9f9;
   padding: 10px;
-
 }
-
 
 .content {
-
-  grid-column: 2;
-
-  grid-row: 2;
-
-  background-color: lightgreen;
-
+  grid-area: content;
+  background-color: #fff;
   padding: 10px;
-
 }
-
 
 .footer {
-
-  grid-column: 1 / span 2;
-
-  background-color: lightgray;
-
+  grid-area: footer;
+  background-color: #f2f2f2;
   padding: 10px;
-
 }
+
+.content-row {
+  padding: 10px;
+}
+
+.header,
+.sidenav,
+.content,
+.footer {
+  border: 1px solid #ccc;
+}
+
+.login-wrapper .example-form {
+  min-width: 100%;
+  max-width: 300px;
+  width: 100%;
+}
+
+.login-wrapper .example-full-width,
+.login-wrapper .btn-block {
+  width: 100%;
+}
+
+.login-wrapper mat-card-header {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: 700;
+}
+
+.login-wrapper mat-card-header mat-card-title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.login-wrapper .mat-card {
+  padding: 40px 70px 100px;
+}
+
+.login-wrapper .mat-stroked-button {
+  border: 1px solid currentColor;
+  line-height: 54px;
+  background: #FFF7FA;
+}
+
+.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.8375em 0;
+}
+
+.flexbutton {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  flex: 1
+    /* Set the width of each column to 50% */
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.image-container {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 200px;
+  /* Adjust the width and height as needed */
+  height: 200px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  /* Auto-sized header and footer, and content fills the remaining space */
+  gap: 10px;
+  /* Adjust the gap between elements as needed */
+  background-color: #f1f1f1;
+  /* Example background color */
+  padding: 20px;
+  /* Example padding */
+}
+
+.headers,
+.footers {
+  text-align: center;
+  background-color: #ddd;
+  /* Example background color */
+  padding: 10px;
+  /* Example padding */
+}
+
+.contents {
+  background-color: #fff;
+  /* Example background color */
+  padding: 10px;
+  /* Example padding */
+}
+
+

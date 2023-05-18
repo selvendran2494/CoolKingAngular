@@ -1,11 +1,71 @@
-<div class="container">
+<!-- <header>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">Dashboard</a></li>
+      <li><a routerLink="/services">My Booking</a></li>
+    </ul>
+  </nav>
+</header> -->
+<main>
+  <div class="grid-container">
+    <!-- <header class="header">Header</header> -->
+    <nav class="sidenav">
+      <div class="image-container">
+        <img src="assets\images\ac.jpg" alt="Image">
+      </div>
+      <div class="card">
+        <div class="headers">Air Service</div>
+        <div class="contents">
+          <p>Address:</p>
+          <p>Phone no:</p>
+          <p>Email:</p>
+          <p>Timing:</p>
+          <p>Rating:</p>
+        </div>
+      </div>
+    </nav>
+    <div class="content">
+      <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="box">
+          <mat-card-header>
+            <mat-card-title>Enter the details</mat-card-title>
+          </mat-card-header>
+          <form class="example-form">
+            <mat-card-content>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Username">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password">
+              </mat-form-field>
+            </mat-card-content>
+            <div class="flexbutton">
+              <div class="column">
+                <button mat-stroked-button color="accent" class="btn-block">
+                  Available Slot 09:00am to 10:30am
+                </button>
+              </div>
+              <div class="column">
+                <button mat-stroked-button color="accent" class="btn-block">Book</button>
+              </div>
 
-  <div class="header">Header</div>
-
-  <div class="sidenav">Side Nav</div>
-
-  <div class="content">Content</div>
-
-  <div class="footer">Footer</div>
-
-</div>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</main>

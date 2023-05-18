@@ -1,0 +1,25 @@
+header {
+  background-color: #3B2593;
+  padding: 20px;
+}
+
+nav ul,.text-center {
+  color: white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
