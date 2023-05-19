@@ -1,0 +1,22 @@
+.container{
+  min-height: 100vh;
+  background-color: #939393;
+  padding: 20px 20px 20px;
+}
+.mat-table {
+  width: 100%;
+}
+
+.mat-cell,
+.mat-header-cell {
+  text-align: center;
+  background-color: #B1C0C9;
+}
+
+.mat-header-cell {
+  background-color: #3B2593;
+  color: white;
+}
+.mat-row, .mat-header-row, .mat-footer-row{
+  border-bottom-width: 0px;
+}
