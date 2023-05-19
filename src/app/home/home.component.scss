@@ -1,24 +1,47 @@
-:root {
-  --var-col: 1fr;
-}
+// :root {
+//   --var-col: 1fr;
+// }
+
+// .container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+//   gap: 10px;
+//   background-color: var(--color-stroke);
+//   padding: 1em;
+//   max-width: 70rem;
+// }
+// .example-card {
+//   max-width: 400px;
+// }
+
+// .example-header-image {
+//   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+//   background-size: cover;
+// }
+// .desc {
+//   display: flex;
+//   flex-flow: column;
+// }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
-  gap: 10px;
-  background-color: var(--color-stroke);
-  padding: 1em;
-  max-width: 70rem;
-}
-.example-card {
-  max-width: 400px;
+  grid-template-rows: 1fr 4fr auto; /* Split into two rows of equal height */
+  // grid-gap: 10px; /* Optional: Add some gap between the boxes */
+  padding: 10px;
 }
 
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
-}
-.desc {
+.Searchbox {
+  background-color:#9999B1;
+  padding: 10px;
   display: flex;
-  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
+.Gridbox {
+  display: grid;
+  background-color:#9999B1;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  padding: 10px;
+}
+

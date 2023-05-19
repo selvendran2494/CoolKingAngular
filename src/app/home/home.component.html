@@ -10,27 +10,30 @@
     <button [routerLink]="['/login']" mat-button>Logout</button>
   </mat-toolbar-row>
 </mat-toolbar> -->
-<div class="d-flex align-items-center h-100">
-  <div class="container" style="margin-bottom: 20px;">
-    <div class="box" *ngFor="let restaurant of restaurants">
-      <mat-card class="example-card">
-        <img mat-card-image src="assets/images/{{restaurant.image}}" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <div class="desc">
-            <div style="text-align: center;">AC Service</div>
-            <div>Place:xxx</div>
-            <div>Timing : 0:00 to 23.59</div>
-          </div>
-        </mat-card-content>
-      </mat-card>
+<div class="d-flex  h-100">
+  <div class="container">
+    <div class="Searchbox">
+      <mat-form-field>
+        <input matInput placeholder="Search">
+        <button mat-button matSuffix>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
     </div>
-    <!-- <div class="box">Item two</div>
-    <div class="box">Item three</div>
-    <div class="box">Item four</div>
-    <div class="box">Item five</div>
-    <div class="box">Item six</div>
-    <div class="box">Item seven</div>
-    <div class="box">Item eight</div> -->
+    <div class="Gridbox">
+        <div *ngFor="let obj of grid">
+          <mat-card class="example-card">
+            <img  mat-card-image src="assets\images\{{obj}}" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </div>
   </div>
 </div>
 

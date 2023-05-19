@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -45,6 +46,7 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     MatToolbarModule,
     MatSnackBarModule,
+    MatIconModule,
     MatSelectModule
   ],
   providers: [],
