@@ -1,0 +1,46 @@
+<main style="background-color:#939393;">
+  <div class="container">
+    <mat-card class="card">
+      <div style="text-align: center;"><strong> Add Centre </strong></div>
+      <mat-card-content class="card-content">
+        <form [formGroup]="addCentreForm">
+          <mat-form-field>
+            <input matInput placeholder="Enter the Name" formControlName="serviceCenterName">
+          </mat-form-field>
+          <mat-form-field>
+            <input maxlength="10" matInput placeholder="Enter the Phone number" formControlName="serviceCenterPhone">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Enter the address" formControlName="serviceCenterAddress">
+          </mat-form-field>
+          <mat-form-field>
+            <input readonly matInput placeholder="Enter the Image Url" formControlName="serviceCenterImageUrl" >
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Enter the mail id" formControlName="serviceCentermailId">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Description about Service center</mat-label>
+            <textarea matInput placeholder="Description about Service center" formControlName="serviceCenterDescription"></textarea>
+            <mat-hint>Max 200 characters</mat-hint>
+          </mat-form-field>
+          <div style="text-align: center;">
+            <button (click)="addCentre()" class="btn btn-primary">Add</button>
+          </div>
+
+          <!-- <mat-form-field>
+            <mat-label>Country</mat-label>
+            <mat-select>
+              <mat-option value="USA">USA</mat-option>
+              <mat-option value="Canada">Canada</mat-option>
+              <mat-option value="UK">UK</mat-option>
+            </mat-select>
+          </mat-form-field> -->
+
+          <!-- <button mat-raised-button color="primary">Register</button> -->
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</main>

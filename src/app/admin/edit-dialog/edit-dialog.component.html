@@ -1,0 +1,30 @@
+<mat-card class="card">
+  <div style="text-align: center;"><strong> Edit Centre </strong></div>
+  <mat-card-content class="card-content">
+    <form [formGroup]="editCentreForm">
+      <mat-form-field>
+        <input matInput placeholder="Enter the Name" formControlName="serviceCenterName">
+      </mat-form-field>
+      <mat-form-field>
+        <input maxlength="10" matInput placeholder="Enter the Phone number" formControlName="serviceCenterPhone">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Enter the address" formControlName="serviceCenterAddress">
+      </mat-form-field>
+      <mat-form-field>
+        <input readonly matInput placeholder="Enter the Image Url" formControlName="serviceCenterImageUrl" >
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Enter the mail id" formControlName="serviceCentermailId">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description about Service center</mat-label>
+        <textarea matInput placeholder="Description about Service center" formControlName="serviceCenterDescription"></textarea>
+        <mat-hint>Max 200 characters</mat-hint>
+      </mat-form-field>
+      <div style="text-align: center;">
+        <button (click)="updatecenterDetails()"  class="btn btn-primary">Update</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

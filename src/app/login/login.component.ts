@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
               duration: 2000,
             });
             this.router.navigateByUrl("/home");
+            window.sessionStorage.setItem("role",data.role);
           }
         },
         error: (e) => {

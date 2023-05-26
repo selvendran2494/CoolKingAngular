@@ -1,76 +1,100 @@
-<!-- <header>
-  <nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/about">Dashboard</a></li>
-      <li><a routerLink="/services">My Booking</a></li>
-    </ul>
-  </nav>
-</header> -->
-<main>
-  <div class="grid-container">
-    <!-- <header class="header">Header</header> -->
-    <nav class="sidenav">
-      <div class="image-container">
-        <img src="assets\images\ac.jpg" alt="Image">
-      </div>
+<main style="background-color:#9999B1;">
+  <div class="container">
+    <div class="box">
+    <div class="nav" style="justify-content: center;">
+      <!-- <div class="card1"> -->
+        <div class="image-container">
+          <img src="{{serviceCenterDetails?.serviceCenterImageUrl}}" alt="Card Image" class="round-image">
+        </div>
+      <!-- </div> -->
+    </div>
+    <div class="nav">
       <div class="card">
-        <div class="headers">Air Service</div>
-        <div class="contents">
-          <p>Address:</p>
-          <p>Phone no:</p>
-          <p>Email:</p>
-          <p>Timing:</p>
-          <p>Rating:</p>
+        <h2 class="card-header">{{serviceCenterDetails?.serviceCenterName}}</h2>
+        <div class="card-content">
+          <div class="column column1">
+            Address
+          </div>
+          <div class="column column2">
+            : {{serviceCenterDetails?.serviceCenterAddress}}
+          </div>
+          <div class="column column1">
+            Phone no
+          </div>
+          <div class="column column2">
+            : {{serviceCenterDetails?.serviceCenterPhone}}
+          </div>
+          <div class="row"></div>
+          <div class="column column1">
+            Email id
+          </div>
+          <div class="column column2" style="font-size: 15px;">
+            : {{serviceCenterDetails?.serviceCentermailId}}
+          </div>
+          <div class="column column1">
+            Timing
+          </div>
+          <div class="column column2">
+            : {{serviceCenterDetails?.serviceCenterAddress}}
+          </div>
+          <div class="column column1">
+            Rating
+          </div>
+          <div class="column column2">
+            <app-ratings></app-ratings>
+          </div>
         </div>
-      </div>
-    </nav>
-    <div class="content">
-      <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-        <mat-card class="box flex-container">
-          <div class="column1">
-          <mat-card-header>
-            <mat-card-title>Enter the details</mat-card-title>
-          </mat-card-header>
-          <form class="example-form">
-            <mat-card-content>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Username">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Email">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Password">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Password">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Password">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Password">
-              </mat-form-field>
-            </mat-card-content>
-            <div class="flexbutton">
-              <div class="column">
-                <button mat-stroked-button color="accent" class="btn-block">
-                  Available Slot 09:00am to 10:30am
-                </button>
-              </div>
-              <div class="column">
-                <button style="width: 50%;" mat-stroked-button color="accent" class="btn-block">Book</button>
-              </div>
-
-            </div>
-          </form>
-        </div>
-        <div class="column2">
-          <img  mat-card-image src="assets\images\dash.jpg" alt="Photo of a Shiba Inu">
-        </div>
-        </mat-card>
       </div>
     </div>
+    </div>
+    <div class="content">
+      <div style="text-align: center;"><strong> Enter the details </strong></div>
+      <form [formGroup]="dashboardForm">
+      <div class="form-container">
+        <mat-form-field>
+          <mat-label>Enter the name of the product</mat-label>
+          <input matInput placeholder="Product name" formControlName="productName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter the model no of the product</mat-label>
+          <input matInput  placeholder="Product model no" formControlName="productModelNo">
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <mat-label>Enter the date of purchase </mat-label>
+          <input matInput  placeholder="Purchase date" formControlName="bookingDate">
+        </mat-form-field> -->
+        <mat-form-field>
+          <mat-label>Date</mat-label>
+          <input matInput [matDatepicker]="datepicker" formControlName="bookingDate">
+          <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter the contact number</mat-label>
+          <input matInput  placeholder="Contact Number" formControlName="contactNumber">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter the Problem of the product</mat-label>
+          <textarea matInput placeholder="Product Problem" formControlName="problemDescription"></textarea>
+          <mat-hint>Max 200 characters</mat-hint>
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <mat-label>Available slots</mat-label>
+          <mat-select formControlName="bookedSlot">
+            <mat-option *ngFor="let option of getSlots" [value]="option.slot">{{ option.slot }}</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        <mat-label>Available Slots</mat-label>
+          <div class="grid-container">
+            <!-- getSlots for all(of getSlots) -->
+          <button [ngClass]="{'green-button':isClicked}" (click)="allotSlot(slots)" [disabled]="isSlotDisabled(slots)" *ngFor="let slots of availableSlotsOnly" class="grid-item">{{ slots.slot }}</button>
+        </div>
+        <button (click)="onSubmit()" mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+    </div>
   </div>
-</main>
+  </main>
+
+
+

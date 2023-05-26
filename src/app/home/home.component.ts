@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/services/api.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -7,15 +8,17 @@ import { ApiService } from "src/services/api.service";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  restaurants = new Array();
+  ServiceCenterDetails = new Array();
   grid:any;
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService,private router:Router) {}
 
   ngOnInit() {
-    this.grid = ["ac1.jpg","ac3.jpg","ac1.jpg"];
-    this.api.getAllRestaurants("/restaurants").subscribe((res: any) => {
-      this.restaurants = res;
-      console.log(this.restaurants);
+     this.api.getAllServiceCenter("/serviceCenter").subscribe((res: any) => {
+      let {data} = res;
+      this.ServiceCenterDetails = data;
     });
+  }
+  goToDetailsPage(id:any){
+    this.router.navigate(['/dashboard',id]);
   }
 }

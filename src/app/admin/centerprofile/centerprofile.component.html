@@ -1,0 +1,29 @@
+<main style="background-color:#9999B1;">
+  <div class="d-flex  h-100">
+    <div class="container">
+      <div class="Gridbox">
+          <div *ngFor="let obj of ServiceCenterDetails">
+            <mat-card class="example-card" style="background-color: #FDE3E4;cursor: pointer;">
+              <img  mat-card-image src="{{obj.serviceCenterImageUrl}}" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <div class="flex-container">
+                  <div class="flex-item" style="text-align: center;"><strong>{{obj.serviceCenterName}}</strong>
+                  </div>
+                  <div class="flex-item" style="padding: 0.8rem;">Place: {{obj.serviceCenterAddress}}</div>
+                  <div class="flex-item" style="padding: 0.8rem;">Timing: 00:00 to 23.59                  </div>
+                </div>
+              </mat-card-content>
+              <div class="icons">
+                  <mat-icon (click) = "openEditDialog(obj)">edit</mat-icon>
+                  <mat-icon (click) = "deleteServiceCenter(obj._id)">delete</mat-icon>
+              </div>
+            </mat-card>
+          </div>
+      </div>
+    </div>
+  </div>
+  </main>
+
+
+
+

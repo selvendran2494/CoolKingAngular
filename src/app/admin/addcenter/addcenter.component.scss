@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  // background-color: green;
+  background-color:#939393;
+}
+
+.card {
+  background-color: white;
+  width: 400px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+.mat-form-field {
+ width: 15rem;
+}
+
+
+

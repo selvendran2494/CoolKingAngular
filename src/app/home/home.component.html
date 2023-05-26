@@ -1,15 +1,4 @@
-<!-- <mat-toolbar class="position-absolute" color="primary">
-  <mat-toolbar-row class="justify-content-between">
-    <button [routerLink]="['/home']" mat-button>Cool King</button>
-    <div>
-      <button [routerLink]="['/home']" mat-button>Home</button>
-      <button [routerLink]="['/dashboard']" mat-button>Dashboard</button>
-      <button [routerLink]="['/home']" mat-button>My Booking</button>
-    </div>
-
-    <button [routerLink]="['/login']" mat-button>Logout</button>
-  </mat-toolbar-row>
-</mat-toolbar> -->
+<main style="background-color:#9999B1;">
 <div class="d-flex  h-100">
   <div class="container">
     <div class="Searchbox">
@@ -21,21 +10,22 @@
       </mat-form-field>
     </div>
     <div class="Gridbox">
-        <div *ngFor="let obj of grid">
-          <mat-card class="example-card">
-            <img  mat-card-image src="assets\images\{{obj}}" alt="Photo of a Shiba Inu">
+        <div *ngFor="let obj of ServiceCenterDetails">
+          <mat-card (click)="goToDetailsPage(obj._id)" class="example-card" style="background-color: #FDE3E4;cursor: pointer;">
+            <img  mat-card-image src="{{obj.serviceCenterImageUrl}}" alt="Photo of a Shiba Inu">
             <mat-card-content>
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-              </p>
+              <div class="flex-container">
+                <div class="flex-item" style="text-align: center;"><strong>{{obj.serviceCenterName}}</strong></div>
+                <div class="flex-item" style="padding: 0.8rem;">Place: {{obj.serviceCenterAddress}}</div>
+                <div class="flex-item" style="padding: 0.8rem;">Timing: 00:00 to 23.59</div>
+              </div>
             </mat-card-content>
           </mat-card>
         </div>
     </div>
   </div>
 </div>
+</main>
 
 
 

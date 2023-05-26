@@ -17,7 +17,11 @@ const routes: Routes = [
   { path: 'send-reset-email',component:ForgetpasswordComponent},
   { path: 'reset-password/:token',component:ResetpasswordComponent},
   { path: 'dashboard',component:DashboardComponent},
-  { path: 'booking',component:BookingComponent}
+  { path: 'dashboard/:id',component:DashboardComponent},
+  { path: 'booking',component:BookingComponent},
+  //Modules
+  {path:  'admin', loadChildren:()=>import('./admin/admin.module').then(a=>a.AdminModule)},
+
 ];
 
 @NgModule({

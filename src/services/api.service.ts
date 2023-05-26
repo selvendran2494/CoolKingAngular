@@ -10,19 +10,37 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ApiService {
   baseUrl:any;
-  resUrl :any;
 
   constructor(private http:HttpClient,private snackbar:MatSnackBar) {
     this.baseUrl = "http://localhost:8800/api";
-    this.resUrl = "https://my-json-server.typicode.com/jainpiyus/redtheme-database-json";
   }
 
   postData(data,from): Observable<any> {
     return this.http.post<any>(this.baseUrl + from, data)
   }
-  getAllRestaurants(from): Observable<any> {
-    return this.http.get<any>(this.resUrl + from);
+  getAllServiceCenter(from):Observable<any> {
+    return this.http.get<any>(this.baseUrl + from);
   }
+  getServiceCenterbyId(from,id):Observable<any> {
+    return this.http.get<any>(this.baseUrl + from + id);
+  }
+  getAllSlots(from):Observable<any> {
+    return this.http.get<any>(this.baseUrl + from);
+  }
+  createAppointment(data,from): Observable<any> {
+    return this.http.post<any>(this.baseUrl + from, data)
+  }
+  getSlotdetailsById(from,id):Observable<any> {
+    return this.http.get<any>(this.baseUrl + from + id);
+  }
+  deleteServiceCenterById(from,id):Observable<any> {
+    return this.http.delete<any>(this.baseUrl + from + id);
+  }
+  updateServiceCenterDetails(data,from,id):Observable<any> {
+    return this.http.put<any>(this.baseUrl + from + id, data);
+  }
+
+
 
 
 }

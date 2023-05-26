@@ -22,7 +22,16 @@
 //   display: flex;
 //   flex-flow: column;
 // }
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 8rem; /* Adjust the height as needed */
+}
 
+// .flex-item {
+//   flex: 1;
+//   // border: 1px solid black;
+// }
 .container {
   display: grid;
   grid-template-rows: 1fr 4fr auto; /* Split into two rows of equal height */

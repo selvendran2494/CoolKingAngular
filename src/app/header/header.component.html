@@ -2,10 +2,14 @@
   <nav>
     <ul>
       <div>Cool King</div>
-      <div class="text-center">
+      <div class="text-center" *ngIf = "!isAdmin">
         <li><a routerLink="/home">Home</a></li>
         <li><a routerLink="/dashboard">Dashboard</a></li>
         <li><a routerLink="/booking">My Booking</a></li>
+      </div>
+      <div class="text-center" *ngIf = "isAdmin">
+        <li><a routerLink="/admin/addServiceCenter">Add Center</a></li>
+        <li><a routerLink="/admin/centerprofile">Center Profile</a></li>
       </div>
       <div>Logout</div>
     </ul>

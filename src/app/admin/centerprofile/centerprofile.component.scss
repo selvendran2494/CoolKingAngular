@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 8rem; /* Adjust the height as needed */
+}
+.container {
+  display: grid;
+  // grid-template-rows: 1fr 4fr auto; /* Split into two rows of equal height */
+  // grid-gap: 10px; /* Optional: Add some gap between the boxes */
+  padding: 10px;
+}
+
+.Searchbox {
+  background-color:#9999B1;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Gridbox {
+  display: grid;
+  background-color:#9999B1;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  padding: 10px;
+}
+.icons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+
